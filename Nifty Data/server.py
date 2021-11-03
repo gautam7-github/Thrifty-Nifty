@@ -17,7 +17,7 @@ run_with_ngrok(app)
 @app.route("/")
 def home():
     pyperclip.copy(f"/{KEY}/nifty/50/data/all")
-    return f"/{KEY}/data/nifty/50/all"
+    return f"/{KEY}/data/nifty/index/all"
 
 # nifty 50 route
 
@@ -32,6 +32,11 @@ def fetch_nifty50_data():
 @app.route(f"/{KEY}/data/nifty/bank/all")
 def fetch_niftybank_data():
     return jsonify(fetch_nifty_bank_data())
+
+
+@app.route(f"/{KEY}/data/nifty/it/all")
+def fetch_niftyit_data():
+    return jsonify(fetch_nifty_it_data())
 
 
 if __name__ == "__main__":
