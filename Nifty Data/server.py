@@ -19,24 +19,16 @@ def home():
     pyperclip.copy(f"/{KEY}/nifty/50/data/all")
     return f"/{KEY}/data/nifty/index/all"
 
-# nifty 50 route
 
-
-@app.route(f"/{KEY}/data/nifty/50/all")
-def fetch_nifty50_data():
-    return jsonify(fetch_nifty_50_data())
-
-# nifty bank route
-
-
-@app.route(f"/{KEY}/data/nifty/bank/all")
-def fetch_niftybank_data():
-    return jsonify(fetch_nifty_bank_data())
-
-
-@app.route(f"/{KEY}/data/nifty/it/all")
-def fetch_niftyit_data():
-    return jsonify(fetch_nifty_it_data())
+@app.route(f"/{KEY}/data/nifty/<index>/all")
+def send_nifty_index_data(index):
+    indices = {
+        'it': fetch_nifty_it_data(),
+        'bank': fetch_nifty_bank_data(),
+        '50': fetch_nifty_50_data()
+    }
+    if index in indices:
+        return jsonify(indices[index])
 
 
 if __name__ == "__main__":
