@@ -6,9 +6,9 @@ API to fetch Nifty 50 Data.
 
 ## Screenshots
 
-![ss1]()
-![ss2]()
-![ss3]()
+![ss1](https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(3).png)
+![ss2](https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(4).png)
+![ss3](https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(5).png)
 
 ### Leveraging Built-in Google Finance features of Google Sheets and Python's Extraordinary CSV Processing Abilities.
 
@@ -18,5 +18,5 @@ API to fetch Nifty 50 Data.
 
 # Project Idea
 
--   I used to track my equity portfolio using google sheets, then eventually decided to make a ETF Performance Tracking and Comparison to benchmark sheet.
+-   I used to track my equity portfolio using google sheets, then used that sheet to make a ETF Performance Tracking and Comparison-to-Benchmark sheet.
 -   Eventually, it turned into Thrifty-Nifty.
