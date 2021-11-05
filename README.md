@@ -6,9 +6,9 @@ API to fetch Nifty 50 Data.
 
 ## Screenshots
 
-![ss1](https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(3).png)
-![ss2](https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(4).png)
-![ss3](https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(5).png)
+![ss1](<https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(3).png>)
+![ss2](<https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(4).png>)
+![ss3](<https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(5).png>)
 
 ### Leveraging Built-in Google Finance features of Google Sheets and Python's Extraordinary CSV Processing Abilities.
 
