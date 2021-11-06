@@ -1,7 +1,6 @@
 from flask import Flask, Response, jsonify
 from flask_ngrok import run_with_ngrok
 from data import *
-import pyperclip
 
 # config
 app = Flask(__name__)
@@ -16,12 +15,12 @@ run_with_ngrok(app)
 
 @app.route("/")
 def home():
-    pyperclip.copy(f"/{KEY}/nifty/50/data/all")
     return f"/{KEY}/data/nifty/index/all"
 
 
 @app.route(f"/{KEY}/data/nifty/<index>/all")
 def send_nifty_index_data(index):
+    index = str(index).lower()
     indices = {
         'it': fetch_nifty_it_data(),
         'bank': fetch_nifty_bank_data(),

@@ -11,7 +11,9 @@ def fetch_nifty_50_data():
     sheetName = "Nifty50"
     base_url = f"https://docs.google.com/spreadsheets/d/{sheetId}/gviz/tq?tqx=out:csv&sheet={sheetName}"
     # print(base_url)
-    data = pd.read_csv(base_url, index_col="SYMBOL")
+    data = pd.read_csv(base_url)
+    data["TICKER"] = data["SYMBOL"]
+    data.set_index("SYMBOL", inplace=True)
     # print(data.head(11))
     jsonData = data.to_json(orient="index")
     return json.loads(jsonData)
@@ -22,7 +24,9 @@ def fetch_nifty_bank_data():
     sheetName = "NiftyBank"
     base_url = f"https://docs.google.com/spreadsheets/d/{sheetId}/gviz/tq?tqx=out:csv&sheet={sheetName}"
     # print(base_url)
-    data = pd.read_csv(base_url, index_col="SYMBOL")
+    data = pd.read_csv(base_url)
+    data["TICKER"] = data["SYMBOL"]
+    data.set_index("SYMBOL", inplace=True)
     # print(data.head(11))
     jsonData = data.to_json(orient="index")
     return json.loads(jsonData)
@@ -33,7 +37,9 @@ def fetch_nifty_it_data():
     sheetName = "NiftyIT"
     base_url = f"https://docs.google.com/spreadsheets/d/{sheetId}/gviz/tq?tqx=out:csv&sheet={sheetName}"
     # print(base_url)
-    data = pd.read_csv(base_url, index_col="SYMBOL")
+    data = pd.read_csv(base_url)
+    data["TICKER"] = data["SYMBOL"]
+    data.set_index("SYMBOL", inplace=True)
     # print(data.head(11))
     jsonData = data.to_json(orient="index")
     return json.loads(jsonData)
