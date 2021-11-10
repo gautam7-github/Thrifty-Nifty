@@ -10,31 +10,34 @@ API to fetch Nifty 50 Data.
 - Nifty Bank
 - Nifty Auto
 - Nifty Pharma
+- Nifty Div Opps 50 (in dev..)
+- Nifty FMCG (in dev..)
 
 # API Format
+```
 {
-  "AMARAJABAT": {
-    "COMPANY": "Amara Raja Batteries Limited", 
-    "CMP": 706.0, 
-    "52WH": 1025.55, 
-    "52WL": 665.0, 
-    "OPEN": 707.05, 
-    "YESTCLOSE": 707.05, 
-    "CHANGE": -1.06, 
-    "CHANGEPCT": -0.15, 
-    "DAYHIGH": 714.0, 
-    "DAYLOW": 704.05, 
-    "MKTCAP": 120781460639, 
-    "EPS": 41.47, 
-    "TICKER": "AMARAJABAT"
+  "ABCD": {
+    "COMPANY": "ABCD ...", 
+    "CMP": xxxx, 
+    "52WH": xxxx, 
+    "52WL": xxxx, 
+    "OPEN": xxxx, 
+    "YESTCLOSE": xxxx, 
+    "CHANGE": xxxx, 
+    "CHANGEPCT": xxxx, 
+    "DAYHIGH": xxxx, 
+    "DAYLOW": xxxx, 
+    "MKTCAP": xxxx, 
+    "EPS": xxxx, 
+    "TICKER": "ABCD"
   }, 
   ...
 }
-# Leveraging Google Finance Function of Google Sheets to collect the financial data.
-# Using Python's Extraordinary CSV Processing Capabilities to Read data from the deployed google sheet.
-# Data read is converted into json and supplied using Flask.
+```
+- Leveraging Google Finance Function of Google Sheets to collect the financial data.
+- Using Python's Extraordinary CSV Processing Capabilities to Read data from the deployed google sheet.
 
-# Basically it turns data in google sheet to a flask api.
+# It turns Data in google sheet to a Flask API.
 
 # Tech Stack
 - Python
