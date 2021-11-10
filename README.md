@@ -13,7 +13,11 @@ API to fetch Nifty 50 Data.
 - Nifty Div Opps 50 (in dev..)
 - Nifty FMCG (in dev..)
 
-# API Format
+# Command Format
+```
+/API_KEY/data/nifty/<index>/all/sort/<sortby>
+```
+# API Response Format
 ```
 {
   "ABCD": {

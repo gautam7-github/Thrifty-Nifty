@@ -1,4 +1,5 @@
 from flask import Flask, Response, jsonify
+from flask.templating import render_template
 from flask_ngrok import run_with_ngrok
 from data import *
 
@@ -15,20 +16,25 @@ run_with_ngrok(app)
 
 @app.route("/")
 def home():
-    return f"/{KEY}/data/nifty/index/all"
+    return render_template("index.html")
+
+
+@app.route("/help")
+def help():
+    return f"/{KEY}/data/nifty/index/all/sort/sortby"
 
 # index route
 
 
-@app.route(f"/{KEY}/data/nifty/<index>/all")
-def send_nifty_index_data(index):
+@app.route(f"/{KEY}/data/nifty/<index>/all/sort/<sortby>")
+def send_nifty_index_data(index, sortby):
     index = str(index).lower()
     indices = {
-        'it': fetch_nifty_index_data("it"),
-        'bank': fetch_nifty_index_data("bank"),
-        '50': fetch_nifty_index_data("50"),
-        'auto': fetch_nifty_index_data("auto"),
-        'pharma': fetch_nifty_index_data("pharma")
+        'it': fetch_nifty_index_data("it", sortby),
+        'bank': fetch_nifty_index_data("bank", sortby),
+        '50': fetch_nifty_index_data("50", sortby),
+        'auto': fetch_nifty_index_data("auto", sortby),
+        'pharma': fetch_nifty_index_data("pharma", sortby)
     }
     if index in indices:
         return jsonify(indices[index])
