@@ -17,14 +17,18 @@ run_with_ngrok(app)
 def home():
     return f"/{KEY}/data/nifty/index/all"
 
+# index route
+
 
 @app.route(f"/{KEY}/data/nifty/<index>/all")
 def send_nifty_index_data(index):
     index = str(index).lower()
     indices = {
-        'it': fetch_nifty_it_data(),
-        'bank': fetch_nifty_bank_data(),
-        '50': fetch_nifty_50_data()
+        'it': fetch_nifty_index_data("it"),
+        'bank': fetch_nifty_index_data("bank"),
+        '50': fetch_nifty_index_data("50"),
+        'auto': fetch_nifty_index_data("auto"),
+        'pharma': fetch_nifty_index_data("pharma")
     }
     if index in indices:
         return jsonify(indices[index])
