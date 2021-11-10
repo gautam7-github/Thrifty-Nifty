@@ -11,12 +11,25 @@ API to fetch Nifty 50 Data.
 - Nifty Auto
 - Nifty Pharma
 
-## Screenshots
-
-![ss1](<https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(3).png>)
-![ss2](<https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(4).png>)
-![ss3](<https://raw.githubusercontent.com/gautam7-github/Thrifty-Nifty/main/screenshots/Screenshot%20(5).png>)
-
+# API Format
+{
+  "AMARAJABAT": {
+    "COMPANY": "Amara Raja Batteries Limited", 
+    "CMP": 706.0, 
+    "52WH": 1025.55, 
+    "52WL": 665.0, 
+    "OPEN": 707.05, 
+    "YESTCLOSE": 707.05, 
+    "CHANGE": -1.06, 
+    "CHANGEPCT": -0.15, 
+    "DAYHIGH": 714.0, 
+    "DAYLOW": 704.05, 
+    "MKTCAP": 120781460639, 
+    "EPS": 41.47, 
+    "TICKER": "AMARAJABAT"
+  }, 
+  ...
+}
 # Leveraging Google Finance Function of Google Sheets to collect the financial data.
 # Using Python's Extraordinary CSV Processing Capabilities to Read data from the deployed google sheet.
 # Data read is converted into json and supplied using Flask.
