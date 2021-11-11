@@ -16,14 +16,20 @@ def fetch_nifty_index_data(index: str, sortBy: str):
     }
     sortcodes = {
         "alph": "SYMBOL",
-        "price": "CMP"
+        "price": "CMP",
+        "mcap": "MKTCAP",
+        "chng": "CHANGEPCT"
     }
     sheetName = indices[index.lower()]
     sheetId = "1FaSibXFWRJ8bFoOIEy4vaoxG7z-S8nUhT6U9f4quvaU"
     base_url = f"https://docs.google.com/spreadsheets/d/{sheetId}/gviz/tq?tqx=out:csv&sheet={sheetName}"
     data = pd.read_csv(base_url)
     data["TICKER"] = data["SYMBOL"]
-    data.sort_values(by=sortBy, ascending=False, inplace=True)
+    if sortBy in ["alph"]:
+        ascend = True
+    else:
+        ascend = False
+    data.sort_values(by=sortcodes[sortBy], ascending=ascend, inplace=True)
     data.set_index("SYMBOL", inplace=True)
     jsonData = data.to_json(orient="index")
     return json.loads(jsonData)

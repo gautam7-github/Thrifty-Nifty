@@ -1,4 +1,4 @@
-from flask import Flask, Response, jsonify
+from flask import Flask, jsonify
 from flask.templating import render_template
 from flask_ngrok import run_with_ngrok
 from data import *
