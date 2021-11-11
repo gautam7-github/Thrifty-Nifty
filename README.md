@@ -1,6 +1,6 @@
 # Thrifty-Nifty
 
-API to fetch Nifty 50 Data.
+API to fetch Nifty Indices Data.
 
 # Google Sheet to Flask API.
 
