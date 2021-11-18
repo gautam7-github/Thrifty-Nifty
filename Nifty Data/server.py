@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from flask.templating import render_template
-from flask_ngrok import run_with_ngrok
+from threading import Thread
 from data import *
 
 # config
@@ -8,8 +8,6 @@ app = Flask(__name__)
 app.config["JSON_SORT_KEYS"] = False
 app.config["JSONIFY_PRETTYPRINT_REGULAR"] = True
 
-# using ngrok's free deployment tunnels to test this API
-run_with_ngrok(app)
 
 # home route
 
@@ -18,15 +16,17 @@ run_with_ngrok(app)
 def home():
     return render_template("index.html")
 
+# f"/{KEY}/data/nifty/index/all/sort/sortby"
+
 
 @app.route("/help")
 def help():
-    return f"/{KEY}/data/nifty/index/all/sort/sortby"
+    return render_template("help.html")
 
 # index route
 
 
-@app.route(f"/{KEY}/data/nifty/<index>/all/sort/<sortby>")
+@app.route(f"/{KEY}/data/nifty/<string:index>/all/sort/<string:sortby>")
 def send_nifty_index_data(index, sortby):
     index = str(index).lower()
     indices = {
@@ -40,5 +40,14 @@ def send_nifty_index_data(index, sortby):
         return jsonify(indices[index])
 
 
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+
+def main():
+    t = Thread(target=run)
+    t.start()
+
+
 if __name__ == "__main__":
-    app.run()
+    main()
