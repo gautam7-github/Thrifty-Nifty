@@ -12,7 +12,8 @@ def fetch_nifty_index_data(index: str, sortBy: str):
         "auto": "NiftyAuto",
         "bank": "NiftyBank",
         "it": "NiftyIT",
-        "pharma": "NiftyPharma"
+        "pharma": "NiftyPharma",
+        "fmcg": "NiftyFMCG"
     }
     sortcodes = {
         "alph": "SYMBOL",
@@ -35,5 +36,15 @@ def fetch_nifty_index_data(index: str, sortBy: str):
     return json.loads(jsonData)
 
 
+def fetch_all_indices_data():
+    sheetName = "Indices"
+    sheetId = "1FaSibXFWRJ8bFoOIEy4vaoxG7z-S8nUhT6U9f4quvaU"
+    base_url = f"https://docs.google.com/spreadsheets/d/{sheetId}/gviz/tq?tqx=out:csv&sheet={sheetName}"
+    data = pd.read_csv(base_url)
+    data.set_index("SYMBOL", inplace=True)
+    jsonData = data.to_json(orient="index")
+    return json.loads(jsonData)
+
+
 if __name__ == "__main__":
-    print(fetch_nifty_index_data("Auto"))
+    print(fetch_all_indices_data())

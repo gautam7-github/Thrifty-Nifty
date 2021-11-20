@@ -10,8 +10,6 @@ app.config["JSONIFY_PRETTYPRINT_REGULAR"] = True
 
 
 # home route
-
-
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -26,7 +24,7 @@ def help():
 # index route
 
 
-@app.route(f"/{KEY}/data/nifty/<string:index>/all/sort/<string:sortby>")
+@app.route(f"{KEY}/data/nifty/<string:index>/all/sort/<string:sortby>")
 def send_nifty_index_data(index, sortby):
     index = str(index).lower()
     indices = {
@@ -38,6 +36,13 @@ def send_nifty_index_data(index, sortby):
     }
     if index in indices:
         return jsonify(indices[index])
+
+# all index route
+
+
+@app.route(f"{KEY}/data/nifty/indices/all")
+def send_all_nifty_indices_data():
+    return jsonify(fetch_all_indices_data())
 
 
 def run():
