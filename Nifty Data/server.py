@@ -32,7 +32,8 @@ def send_nifty_index_data(index, sortby):
         'bank': fetch_nifty_index_data("bank", sortby),
         '50': fetch_nifty_index_data("50", sortby),
         'auto': fetch_nifty_index_data("auto", sortby),
-        'pharma': fetch_nifty_index_data("pharma", sortby)
+        'pharma': fetch_nifty_index_data("pharma", sortby),
+        'fmcg': fetch_nifty_index_data("fmcg", sortBy)
     }
     if index in indices:
         return jsonify(indices[index])
