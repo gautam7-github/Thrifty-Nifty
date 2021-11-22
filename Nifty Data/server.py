@@ -27,6 +27,7 @@ def help():
 @app.route(f"/{KEY}/data/nifty/<string:index>/all/sort/<string:sortby>")
 def send_nifty_index_data(index, sortby):
     index = str(index).lower()
+    sortby = str(sortby).lower()
     indices = {
         'it': fetch_nifty_index_data("it", sortby),
         'bank': fetch_nifty_index_data("bank", sortby),
