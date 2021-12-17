@@ -60,6 +60,11 @@ API to fetch Nifty Indices Data.
 
 -   https://docs.google.com/spreadsheets/d/1FaSibXFWRJ8bFoOIEy4vaoxG7z-S8nUhT6U9f4quvaU/edit?usp=sharing
 
+## Flutter App using Thrifty Nifty API
+
+- https://github.com/gautam7-github/thrifty_nifty_flutter_app
+
+<hr>
 # Project Idea
 
 -   I used to track my equity portfolio using google sheets, then used that sheet to make a ETF Performance Tracking and Comparison-to-Benchmark sheet.
